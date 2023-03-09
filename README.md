@@ -23,11 +23,26 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de ações
 
+- Iniciar o jogo;
+- Reiniciar o jogo;
+- Atirar;
+- Movimentar a nave para frente(acelerar);
+- Girar a nave nos dois sentidos(horário e anti-horário);
+- Alerar o modo de jogo;
+
 ## Usuários 
 
+## Línguagem ubiqua
+
+- Asteroide: Objeto em formato de pedra que se move aleatóriamente na tela;
+- Nave: O que o jogador controla com as arrows do teclado, ela tem o formato triângular;
+- Acelerar a nave: Aumentar a velocidade de para onde a ponta da nave está apontada;
 ## Mapa de contexto
 
 ## Entidades
+
+- Jogador/Nave:
+    Quantidade de vidas;
 
 ## Requisitos funcionais
 
