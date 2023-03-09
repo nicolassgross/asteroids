@@ -10,3 +10,9 @@
 - Saber se conseguimos utilizar DDD para criar a base de código do jogo;
 - Conseguir jogar o jogo que criamos;
 - Disponibilizar o jogo para os demais membros da equipe.
+
+## DDD - Asteroids
+
+# Descrição do produto:
+
+
