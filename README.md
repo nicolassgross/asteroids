@@ -1,8 +1,8 @@
-## OBJETIVO
+# OBJETIVO
 
 - Desenvolver um jogo chamado asteroids utilizando javascript com controles pelo teclado.
 
-## Motivação 
+# Motivação 
 
 - Aprimorar conhecimentos de lógica;
 - Praticar conceitos que talvez não vemos no dia a dia; 
@@ -11,9 +11,9 @@
 - Conseguir jogar o jogo que criamos;
 - Disponibilizar o jogo para os demais membros da equipe.
 
-## DDD - Asteroids
+# DDD - Asteroids
 
-# Descrição do produto:
+## Descrição do produto:
 
 - Jogo que tem como objetivo não ser atingido pelos multiplos asteroids que se movimentam pela tela. 
 Também é possível atirar nos asteroids para quebrá-los ganhando pontos. Todo asteroide atingido
