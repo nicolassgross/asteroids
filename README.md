@@ -11,6 +11,12 @@
 - Conseguir jogar o jogo que criamos;
 - Disponibilizar o jogo para os demais membros da equipe.
 
+# Convenção de desenvolvimento
+
+- Vamos manter os nomes em português para não confundir os termos do jogo com os termos do DDD
+    - DDD em ingles
+    - Domínio do jogo em Portugues
+
 # DDD - Asteroids
 
 ## Descrição do produto:
@@ -54,12 +60,12 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de contexto
 
- - Tela ou Cenário
+ - Telas do Jogo
  - Nave
  - Asteroides
  - Sistema de Pontuação
- - Sistema de tempo
- - Controle da Nave
+ - Controles do Jogo
+    - Sistema de Controle de Tempo
 
 ## Entidades
 
@@ -86,6 +92,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - Tela de ação (jogo em si);
     - Tela de score final;
     - Tela de fim de jogo (game over);
+
 ## Requisitos funcionais
 
 - Permitir visualizar a tela inicial do jogo com menu de ações;
@@ -100,6 +107,8 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - Espaço deve disparar tiros.
 
 - Gerar asteroides randomicamente;
+
+- Permitir atirar nos asteroides, destruir eles
 
 
 ## Regras de negócio
@@ -133,3 +142,11 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - Cada asteroide dividido e destruido vale 1 ponto;
     - O jogador mais bem rankeado é o que tiver mais pontos em um menor espaço de tempo;
     - Deve existir um sistema de pontuação diferente para os 2 níveis do jogo;
+
+## Issue List
+
+- Criar a pasta "src"
+- Adicionar um sistema de unit de test
+- Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/modules/nave"
+- Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
+- Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
