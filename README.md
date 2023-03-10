@@ -54,12 +54,12 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de contexto
 
- - Tela ou Cenário
+ - Telas do Jogo
  - Nave
  - Asteroides
  - Sistema de Pontuação
- - Sistema de tempo
- - Controle da Nave
+ - Sistema de Controle de Tempo
+ - Controles da Nave
 
 ## Entidades
 
@@ -86,6 +86,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - Tela de ação (jogo em si);
     - Tela de score final;
     - Tela de fim de jogo (game over);
+
 ## Requisitos funcionais
 
 - Permitir visualizar a tela inicial do jogo com menu de ações;
@@ -100,6 +101,8 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - Espaço deve disparar tiros.
 
 - Gerar asteroides randomicamente;
+
+- Permitir atirar nos asteroides, destruir eles
 
 
 ## Regras de negócio
