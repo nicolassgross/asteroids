@@ -89,6 +89,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 - Telas/Menus do Jogo:
     - Tela inicial;
+    - Seleção de dificuldade;
     - Tela de ação (jogo em si);
     - Tela de score final;
     - Tela de fim de jogo (game over);
@@ -143,6 +144,11 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - O jogador mais bem rankeado é o que tiver mais pontos em um menor espaço de tempo;
     - Deve existir um sistema de pontuação diferente para os 2 níveis do jogo;
 
+- Sistema de jogo:
+    - Ao iniciar o jogo o usuário deve escolher o nível de dificuldade
+    - Após perder todas as vidas, o jogo deve ser finalizado e deve ser exibida a tela para digitação do nome
+    - Após digitar o nome e confirmar, exibir a tela de score/pontuação
+
 ## Issue List
 
 - Done - criar o arquivo .gitignore
@@ -159,4 +165,6 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - npm i typescript --save-dev
     - npx tsc --init
 
--
+- compilando
+    - npx tsc
+    - npx tsc -w (compilar em tempo real)
