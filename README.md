@@ -154,7 +154,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - criar o arquivo .gitignore
 - Done - iniciado projeto typescript
 - Done - Criar a pasta "src"
-- Adicionar um sistema de unit de test
+- Done - Adicionar um sistema de unit de test
 - Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/modules/nave"
 - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
 - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
@@ -165,6 +165,13 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - npm i typescript --save-dev
     - npx tsc --init
 
+- instalando test framework
+    - npm i chai --save-dev
+    - npm install chai mocha ts-node @types/chai @types/mocha --save-dev
+
 - compilando
     - npx tsc
     - npx tsc -w (compilar em tempo real)
+
+- test-framework
+    - npm test
