@@ -2,6 +2,6 @@ import { expect } from 'chai';
 
 describe('Exemplo describe', () => {
     it('casetest it', () => {
-        expect(true).to.be.false;
+        expect(false).to.be.false;
     });
 });

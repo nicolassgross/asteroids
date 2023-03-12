@@ -64,7 +64,8 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
  - Nave
  - Asteroides
  - Sistema de Pontuação
- - Controles do Jogo
+ - Jogo
+    - Controles do Jogo
     - Sistema de Controle de Tempo
 
 ## Entidades
