@@ -1,3 +1,6 @@
+# arquivos
 package-lock.json
-./node_modules
-./build
+
+# pastas
+node_modules/
+build/
