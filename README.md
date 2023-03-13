@@ -17,6 +17,8 @@
     - DDD em ingles
     - Domínio do jogo em Portugues
 
+- Nome das pastas e arquivos no singular (a não ser que seja uma exceção)
+
 # DDD - Asteroids
 
 ## Descrição do produto:
@@ -156,9 +158,16 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - iniciado projeto typescript
 - Done - Criar a pasta "src"
 - Done - Adicionar um sistema de unit de test
-- Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/modules/nave"
-- Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
+- Done - Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/asteroid/context"
+- Done - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
 - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
+
+## Definições
+
+- Context
+    - Pastas que contem os contextos do jogo conforme definido no DDD
+- SharedContext
+    - Pasta que contem contem arquivos que podem ser usado por vários contextos
 
 ## comandos executados
 
