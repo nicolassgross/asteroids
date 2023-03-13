@@ -1,0 +1,7 @@
+# arquivos
+package-lock.json
+
+# pastas
+node_modules/
+build/
+.vscode/
