@@ -6,4 +6,16 @@ export class JogoService implements JogoInterface {
     iniciarJogo() : void {
         LogService.logarTexto('Jogo iniciado');
     }
+
+    reiniciarJogo(): void {
+
+    }
+
+    verMenuInicial(): void {
+
+    }
+
+    verTelaPontuacao(): void {
+
+    }
 }
