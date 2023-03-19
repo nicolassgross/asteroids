@@ -160,7 +160,9 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Adicionar um sistema de unit de test
 - Done - Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/asteroid/context"
 - Done - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
-- Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
+- Done - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
+- Criar um sistema de injeção de dependencias
+- Programar as regras de negócios
 
 ## Definições
 
@@ -174,6 +176,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - criar novo projeto typescript
     - npm i typescript --save-dev
     - npx tsc --init
+    - npm i typed-inject --save-dev
 
 - instalando test framework
     - npm i chai --save-dev
