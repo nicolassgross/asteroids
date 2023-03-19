@@ -8,14 +8,14 @@ export class JogoService implements JogoInterface {
     }
 
     reiniciarJogo(): void {
-
+        LogService.logarTexto('Jogo reiniciado');
     }
 
     verMenuInicial(): void {
-
+        LogService.logarTexto('Mostrar menu inicial');
     }
 
     verTelaPontuacao(): void {
-
+        LogService.logarTexto('Mostrar tela de pontuação');
     }
 }

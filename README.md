@@ -62,11 +62,11 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de contexto
 
- - Telas do Jogo
  - Nave
  - Asteroides
  - Sistema de Pontuação
  - Jogo
+    - Telas do Jogo
     - Controles do Jogo
     - Sistema de Controle de Tempo
 
