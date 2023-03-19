@@ -33,6 +33,7 @@ describe('Teste do contexto da Nave', () => {
         objNaveService.girarParaEsquerda();
         objNaveService.girarParaDireita();
         objNaveService.atirar();
+        objNaveService.explodirNave();
 
         let arrMensagens = LogService.getMensagens();
 
@@ -43,6 +44,7 @@ describe('Teste do contexto da Nave', () => {
                 , 'Nave girando para a esquerda'
                 , 'Nave girando para a direita'
                 , 'Nave atirando'
+                , 'Nave explodiu'
             ]
         );
     });

@@ -31,11 +31,11 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de ações
 
-- Iniciar o jogo;
-- Reiniciar o jogo;
-- Atirar;
-- Movimentar a nave para frente (acelerar);
-- Girar a nave nos dois sentidos (horário e anti-horário);
+- Done - Iniciar o jogo;
+- Done - Reiniciar o jogo;
+- Done - Atirar;
+- Done - Movimentar a nave para frente (acelerar);
+- Done - Girar a nave nos dois sentidos (horário e anti-horário);
 - Alterar o modo de jogo (fácil e difícil);
 
 ## Usuários
@@ -74,9 +74,9 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 - Partida (novo jogo)
     - Jogador;
-    - Quantidade de vidas;
-    - Pontuação do Jogador;
-    - Tempo de jogo;
+    - Done - Quantidade de vidas;
+    - Done - Pontuação do Jogador;
+    - Done - Tempo de jogo;
 
 - Jogador/Nave:
     - Velocidade;
@@ -161,7 +161,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/asteroid/context"
 - Done - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
 - Done - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
-- Criar um sistema de injeção de dependencias
+- Done -  Criar um sistema de injeção de dependencias
 - Programar as regras de negócios
 
 ## Definições

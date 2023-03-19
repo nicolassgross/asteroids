@@ -3,4 +3,5 @@ export interface NaveInterface {
     girarParaEsquerda() : void;
     girarParaDireita() : void;
     atirar() : void;
+    explodirNave() : void;
 }

@@ -25,4 +25,8 @@ export class NaveService implements NaveInterface {
     atirar(): void {
         this.objNaveRepositoy.atirar();
     }
+
+    explodirNave(): void {
+        this.objNaveRepositoy.explodirNave();
+    }
 }

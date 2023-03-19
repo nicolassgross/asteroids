@@ -17,4 +17,8 @@ export class NaveConsoleRepository implements NaveInterface {
     atirar(): void {
         LogService.logarTexto('Nave atirando');
     }
+
+    explodirNave(): void {
+        LogService.logarTexto('Nave explodiu');
+    }
 }
