@@ -15,4 +15,8 @@ export class LogService {
     public static getMensagens() : Array<String> {
         return this.arrMensagens;
     }
+
+    public static limparLog() : void {
+        this.arrMensagens = ["Log iniciado"];
+    }
 }

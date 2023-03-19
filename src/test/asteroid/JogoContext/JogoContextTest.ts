@@ -2,18 +2,19 @@ import { expect } from 'chai';
 import { createInjector } from 'typed-inject';
 
 import { JogoService } from "../../../asteroid/JogoContext/JogoService";
-import { JogoInterface } from "../../../asteroid/JogoContext/JogoInterface";
 import { JogoConsoleRepository } from "../../../asteroid/JogoContext/JogoConsoleRepository";
 import { LogService } from "../../../asteroid/SharedContext/LogService";
 
 describe('Teste do contexto do Jogo', () => {
     it('Teste do Serviço Jogo', () => {
         const appInjector = createInjector()
-            .provideClass('JogoRepository', JogoConsoleRepository);
+            .provideClass('JogoConcreteRepository', JogoConsoleRepository);
 
         let objJogoService = new JogoService(
-            appInjector.resolve('JogoRepository')
+            appInjector.resolve('JogoConcreteRepository')
         );
+
+        LogService.limparLog();
 
         objJogoService.iniciarJogo();
         objJogoService.reiniciarJogo();
