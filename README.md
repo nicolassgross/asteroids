@@ -161,8 +161,10 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/asteroid/context"
 - Done - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
 - Done - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
-- Done -  Criar um sistema de injeção de dependencias
+- Done - Criar um sistema de injeção de dependencias
 - Programar as regras de negócios
+- Criar fabrica para injeção de dependencias de testes
+- Injetar o log
 
 ## Definições
 
