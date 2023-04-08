@@ -1,11 +1,12 @@
 import { expect } from 'chai';
 import { createInjector } from 'typed-inject';
 
+import { AsteroidTestFactory } from "../AsteroidTestFactory";
+
 import { NaveEntity } from "../../../asteroid/NaveContext/NaveEntity";
 import { NaveFactory } from "../../../asteroid/NaveContext/NaveFactory";
 import { NaveService } from "../../../asteroid/NaveContext/NaveService";
 import { NaveConsoleRepository } from "../../../asteroid/NaveContext/NaveConsoleRepository";
-import { LogService } from "../../../asteroid/SharedContext/LogService";
 
 describe('Teste do contexto da Nave', () => {
     it('Teste da Entidade', () => {
@@ -20,14 +21,15 @@ describe('Teste do contexto da Nave', () => {
     });
 
     it('Teste do Serviço Nave', () => {
-        const appInjector = createInjector()
-            .provideClass('NaveConcreteRepository', NaveConsoleRepository);
+        const objAsteroidTestFactory = new AsteroidTestFactory();
+        const appInjector = objAsteroidTestFactory.criarAppInjector();
+        const objLogService = appInjector.resolve('LogInterface');
 
         let objNaveService = new NaveService(
             appInjector.resolve('NaveConcreteRepository')
         );
 
-        LogService.limparLog();
+        objLogService.limparLog();
 
         objNaveService.acelerar();
         objNaveService.girarParaEsquerda();
@@ -35,7 +37,7 @@ describe('Teste do contexto da Nave', () => {
         objNaveService.atirar();
         objNaveService.explodirNave();
 
-        let arrMensagens = LogService.getMensagens();
+        let arrMensagens = objLogService.getMensagens();
 
         expect(arrMensagens).to.deep.equal(
             [

@@ -1,22 +1,22 @@
-// import { NaveEntity } from "./NaveEntity";
+import { LogInterface } from "./LogInterface";
 
-export class LogService {
-    private static  arrMensagens : Array<String> = ["Log iniciado"];
+export class LogService  implements LogInterface {
+    private arrMensagens : Array<String> = ["Log iniciado"];
 
-    public static logarTexto(str : string) : void {
-        LogService.addMensagem(str);
+    public logarTexto(str : string) : void {
+        this.addMensagem(str);
         console.log(str);
     }
 
-    public static addMensagem(str : string) : void {
+    public addMensagem(str : string) : void {
         this.arrMensagens.push(str);
     }
 
-    public static getMensagens() : Array<String> {
+    public getMensagens() : Array<String> {
         return this.arrMensagens;
     }
 
-    public static limparLog() : void {
+    public limparLog() : void {
         this.arrMensagens = ["Log iniciado"];
     }
 }

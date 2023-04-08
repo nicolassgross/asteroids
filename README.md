@@ -170,6 +170,7 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 - Context
     - Pastas que contem os contextos do jogo conforme definido no DDD
+
 - SharedContext
     - Pasta que contem contem arquivos que podem ser usado por vários contextos
 

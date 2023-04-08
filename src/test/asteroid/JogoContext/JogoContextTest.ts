@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import { createInjector } from 'typed-inject';
 
+import { AsteroidTestFactory } from "../AsteroidTestFactory";
+
 import { JogoService } from "../../../asteroid/JogoContext/JogoService";
-import { JogoConsoleRepository } from "../../../asteroid/JogoContext/JogoConsoleRepository";
-import { LogService } from "../../../asteroid/SharedContext/LogService";
 import { JogoEntity } from "../../../asteroid/JogoContext/JogoEntity";
 
 describe('Teste do contexto do Jogo', () => {
@@ -18,21 +18,22 @@ describe('Teste do contexto do Jogo', () => {
     });
 
     it('Teste do Serviço Jogo', () => {
-        const appInjector = createInjector()
-            .provideClass('JogoConcreteRepository', JogoConsoleRepository);
+        const objAsteroidTestFactory = new AsteroidTestFactory();
+        const appInjector = objAsteroidTestFactory.criarAppInjector();
+        const objLogService = appInjector.resolve('LogInterface');
 
         let objJogoService = new JogoService(
             appInjector.resolve('JogoConcreteRepository')
         );
 
-        LogService.limparLog();
+        objLogService.limparLog();
 
         objJogoService.iniciarJogo();
         objJogoService.reiniciarJogo();
         objJogoService.verMenuInicial();
         objJogoService.verTelaPontuacao();
 
-        let arrMensagens = LogService.getMensagens();
+        let arrMensagens = objLogService.getMensagens();
 
         expect(arrMensagens).to.deep.equal(
             [

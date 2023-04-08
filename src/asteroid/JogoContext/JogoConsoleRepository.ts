@@ -1,21 +1,31 @@
 import { JogoInterface } from "./JogoInterface";
-import { LogService } from "../SharedContext/LogService";
+import { LogInterface } from "../SharedContext/LogInterface";
 
 
 export class JogoConsoleRepository implements JogoInterface {
+
+    private objLogService : LogInterface;
+
+    // este inject é necessário para que o DI saiba qual interface concreta será construida
+    public static inject = ['LogInterface'] as const;
+
+    constructor(iLogInterface : LogInterface) {
+        this.objLogService = iLogInterface
+    }
+
     iniciarJogo() : void {
-        LogService.logarTexto('Jogo iniciado');
+        this.objLogService.logarTexto('Jogo iniciado');
     }
 
     reiniciarJogo(): void {
-        LogService.logarTexto('Jogo reiniciado');
+        this.objLogService.logarTexto('Jogo reiniciado');
     }
 
     verMenuInicial(): void {
-        LogService.logarTexto('Mostrar menu inicial');
+        this.objLogService.logarTexto('Mostrar menu inicial');
     }
 
     verTelaPontuacao(): void {
-        LogService.logarTexto('Mostrar tela de pontuação');
+        this.objLogService.logarTexto('Mostrar tela de pontuação');
     }
 }
