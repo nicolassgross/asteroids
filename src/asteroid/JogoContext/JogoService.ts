@@ -3,7 +3,26 @@ import { LogService } from "../SharedContext/LogService";
 
 
 export class JogoService implements JogoInterface {
+
+    private objJogoRepositoy : JogoInterface;
+
+    constructor(iJogoInterface : JogoInterface) {
+        this.objJogoRepositoy = iJogoInterface
+    }
+
     iniciarJogo() : void {
-        LogService.logarTexto('Jogo iniciado');
+        this.objJogoRepositoy.iniciarJogo();
+    }
+
+    reiniciarJogo(): void {
+        this.objJogoRepositoy.reiniciarJogo();
+    }
+
+    verMenuInicial(): void {
+        this.objJogoRepositoy.verMenuInicial();
+    }
+
+    verTelaPontuacao(): void {
+        this.objJogoRepositoy.verTelaPontuacao();
     }
 }

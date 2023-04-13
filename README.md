@@ -31,11 +31,11 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de ações
 
-- Iniciar o jogo;
-- Reiniciar o jogo;
-- Atirar;
-- Movimentar a nave para frente (acelerar);
-- Girar a nave nos dois sentidos (horário e anti-horário);
+- Done - Iniciar o jogo;
+- Done - Reiniciar o jogo;
+- Done - Atirar;
+- Done - Movimentar a nave para frente (acelerar);
+- Done - Girar a nave nos dois sentidos (horário e anti-horário);
 - Alterar o modo de jogo (fácil e difícil);
 
 ## Usuários
@@ -62,11 +62,11 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 ## Mapa de contexto
 
- - Telas do Jogo
  - Nave
  - Asteroides
  - Sistema de Pontuação
  - Jogo
+    - Telas do Jogo
     - Controles do Jogo
     - Sistema de Controle de Tempo
 
@@ -74,14 +74,14 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 - Partida (novo jogo)
     - Jogador;
-    - Quantidade de vidas;
-    - Pontuação do Jogador;
-    - Tempo de jogo;
+    - Done - Quantidade de vidas;
+    - Done - Pontuação do Jogador;
+    - Done - Tempo de jogo;
 
 - Jogador/Nave:
-    - Velocidade;
-    - Direção;
-    - X, Y (Posição na tela);
+    - Done - Velocidade;
+    - Done - Direção;
+    - Done - X, Y (Posição na tela);
     - W, H (Tamanho altura, largura);
 
 - Asteroide:
@@ -160,12 +160,18 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Adicionar um sistema de unit de test
 - Done - Criar as pastas de modulos para cada MAPA DE CONTEXTO - "src/asteroid/context"
 - Done - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
-- Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
+- Done - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
+- Done - Criar um sistema de injeção de dependencias
+- Done - Criar fabrica para injeção de dependencias de testes
+- Done - Injetar o log
+- Done - Programar as regras de negócios iniciais para poc
+- poc com phaser
 
 ## Definições
 
 - Context
     - Pastas que contem os contextos do jogo conforme definido no DDD
+
 - SharedContext
     - Pasta que contem contem arquivos que podem ser usado por vários contextos
 
@@ -174,10 +180,14 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - criar novo projeto typescript
     - npm i typescript --save-dev
     - npx tsc --init
+    - npm i typed-inject --save-dev
 
 - instalando test framework
     - npm i chai --save-dev
     - npm install chai mocha ts-node @types/chai @types/mocha --save-dev
+
+- instalando o phaser
+    - npm i phaser --save-dev
 
 - compilando
     - npx tsc

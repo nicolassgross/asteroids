@@ -1,11 +1,5 @@
-export class NaveEntity {
-    velocidade: number;
+import { ComponenteEntity } from "../SharedContext/ComponenteEntity";
 
-    constructor(velocidade:number) {
-        this.velocidade = velocidade;
-    }
+export class NaveEntity extends ComponenteEntity {
 
-    getVelocidade() : number {
-        return this.velocidade;
-    }
 }
