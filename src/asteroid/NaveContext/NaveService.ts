@@ -1,5 +1,6 @@
 import { NaveInterface } from "./NaveInterface";
 import { LogService } from "../SharedContext/LogService";
+import { NaveEntity } from "./NaveEntity";
 
 
 export class NaveService implements NaveInterface {
@@ -8,6 +9,10 @@ export class NaveService implements NaveInterface {
 
     constructor(iNaveInterface : NaveInterface) {
         this.objNaveRepositoy = iNaveInterface
+    }
+
+    getNaveEntity() : NaveEntity {
+        return this.objNaveRepositoy.getNaveEntity();
     }
 
     acelerar() : void {

@@ -10,8 +10,14 @@ import { NaveConsoleRepository } from "../../../asteroid/NaveContext/NaveConsole
 
 describe('Teste do contexto da Nave', () => {
     it('Teste da Entidade', () => {
-        let objNaveEntity = new NaveEntity(10);
-        expect(objNaveEntity.getVelocidade()).to.be.equal(10);
+        let objNaveEntity = new NaveEntity(0, 0, 0, 0);
+
+        const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveEntity;
+
+        expect(velocidade).to.be.equal(0);
+        expect(posicao_x).to.be.equal(0);
+        expect(posicao_y).to.be.equal(0);
+        expect(direcao_em_graus).to.be.equal(0);
     });
 
     it('Teste da Fabrica', () => {
@@ -49,5 +55,11 @@ describe('Teste do contexto da Nave', () => {
                 , 'Nave explodiu'
             ]
         );
+
+        const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveService.getNaveEntity();
+        expect(velocidade).to.be.equal(1);
+        expect(posicao_x).to.be.equal(0);
+        expect(posicao_y).to.be.equal(0);
+        expect(direcao_em_graus).to.be.equal(0);
     });
 });

@@ -79,9 +79,9 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - Done - Tempo de jogo;
 
 - Jogador/Nave:
-    - Velocidade;
-    - Direção;
-    - X, Y (Posição na tela);
+    - Done - Velocidade;
+    - Done - Direção;
+    - Done - X, Y (Posição na tela);
     - W, H (Tamanho altura, largura);
 
 - Asteroide:
@@ -162,9 +162,9 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Criar as entidades dentro dos modulos e criar as fábricas necessárias (manter unit-test)
 - Done - Criar os serviços dentro dos modulos fazendo mapeamento dos requisitos funcionais
 - Done - Criar um sistema de injeção de dependencias
+- Done - Criar fabrica para injeção de dependencias de testes
+- Done - Injetar o log
 - Programar as regras de negócios
-- Criar fabrica para injeção de dependencias de testes
-- Injetar o log
 
 ## Definições
 
