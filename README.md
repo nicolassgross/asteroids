@@ -164,7 +164,8 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Criar um sistema de injeção de dependencias
 - Done - Criar fabrica para injeção de dependencias de testes
 - Done - Injetar o log
-- Programar as regras de negócios
+- Done - Programar as regras de negócios iniciais para poc
+- poc com phaser
 
 ## Definições
 
@@ -184,6 +185,9 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - instalando test framework
     - npm i chai --save-dev
     - npm install chai mocha ts-node @types/chai @types/mocha --save-dev
+
+- instalando o phaser
+    - npm i phaser --save-dev
 
 - compilando
     - npx tsc
