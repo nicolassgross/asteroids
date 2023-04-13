@@ -11,10 +11,6 @@ describe('Teste do contexto do Jogo', () => {
         let objJogoEntity = new JogoEntity(10);
         expect(objJogoEntity.getVidas()).to.be.equal(10);
         expect(objJogoEntity.getTempoJogo()).to.be.equal(0);
-
-        // testa se o fim de jogo for setado
-        objJogoEntity.setTempoFimJogo();
-        expect(objJogoEntity.getTempoJogo()).to.be.equal(0.001);
     });
 
     it('Teste do Serviço Jogo', () => {

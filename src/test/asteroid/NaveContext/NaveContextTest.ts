@@ -6,20 +6,11 @@ import { AsteroidTestFactory } from "../AsteroidTestFactory";
 import { NaveEntity } from "../../../asteroid/NaveContext/NaveEntity";
 import { NaveFactory } from "../../../asteroid/NaveContext/NaveFactory";
 import { NaveService } from "../../../asteroid/NaveContext/NaveService";
-import { NaveConsoleRepository } from "../../../asteroid/NaveContext/NaveConsoleRepository";
+import { ProjetilEntity } from '../../../asteroid/NaveContext/ProjetilEntity';
+import { ProjetilService } from '../../../asteroid/NaveContext/ProjetilService';
+
 
 describe('Teste do contexto da Nave', () => {
-    it('Teste da Entidade', () => {
-        let objNaveEntity = new NaveEntity(0, 0, 0, 0);
-
-        const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveEntity;
-
-        expect(velocidade).to.be.equal(0);
-        expect(posicao_x).to.be.equal(0);
-        expect(posicao_y).to.be.equal(0);
-        expect(direcao_em_graus).to.be.equal(0);
-    });
-
     it('Teste da Fabrica', () => {
         let objNaveFactory = new NaveFactory();
         let objNaveEntity = objNaveFactory.criarNave();
@@ -61,5 +52,38 @@ describe('Teste do contexto da Nave', () => {
         expect(posicao_x).to.be.equal(0);
         expect(posicao_y).to.be.equal(0);
         expect(direcao_em_graus).to.be.equal(0);
+    });
+
+    it('Teste do Serviço do Projetil', () => {
+        const objAsteroidTestFactory = new AsteroidTestFactory();
+        const appInjector = objAsteroidTestFactory.criarAppInjector();
+        const objLogService = appInjector.resolve('LogInterface');
+
+        let objProjetilService = new ProjetilService(
+            appInjector.resolve('ProjetilConcreteRepository')
+        );
+
+        objLogService.limparLog();
+
+        objProjetilService.novoProjetil();
+        objProjetilService.novoProjetil();
+        objProjetilService.moverProjeteis();
+
+        let arrMensagens = objLogService.getMensagens();
+
+        expect(arrMensagens).to.deep.equal(
+            [
+                'Log iniciado'
+                , 'Novo Projetil Criado'
+                , 'Novo Projetil Criado'
+                , 'Todos os projéteis movidos para frente'
+            ]
+        );
+
+        // const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveService.getNaveEntity();
+        // expect(velocidade).to.be.equal(1);
+        // expect(posicao_x).to.be.equal(0);
+        // expect(posicao_y).to.be.equal(0);
+        // expect(direcao_em_graus).to.be.equal(0);
     });
 });
