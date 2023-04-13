@@ -20,17 +20,21 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
         this.arrProjeteis = new Array<ProjetilEntity>;
     }
 
-    novoProjetil(objNaveEntity : NaveEntity) : void {
+    novoProjetil(
+        objNaveEntity : NaveEntity,
+        velocidade : number,
+        limite  : number
+    ) : void {
         this.objLogService.logarTexto('Novo Projetil Criado');
 
         // adiciona novo item no projetil na posicao da nave
         this.arrProjeteis.push(
             new ProjetilEntity(
-                this.velocidade,
+                velocidade,
                 objNaveEntity.posicao_x,
                 objNaveEntity.posicao_y,
                 objNaveEntity.direcao_em_graus,
-                this.limite
+                limite
             )
         )
     }
@@ -38,9 +42,22 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
     // mover todos os projeteis disparados
     moverProjeteis() : void {
         this.objLogService.logarTexto('Todos os projéteis movidos para frente');
+
+        this.arrProjeteis.map( (objProjetilEntity) => {
+            objProjetilEntity.posicao_x += 1;
+            objProjetilEntity.posicao_y += 1;
+            objProjetilEntity.limite +=1;
+
+            return objProjetilEntity
+        });
     }
 
-    verificarLimite() : boolean {
+    // se o limite do projetil chegar no limite final, ele deve ser excluido
+    verificarLimite(limite_final : number) : boolean {
+        this.arrProjeteis.filter( (element, index) => {
+            return element.limite <= limite_final
+        });
+
         return true;
     }
 }

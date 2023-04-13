@@ -67,11 +67,16 @@ describe('Teste do contexto da Nave', () => {
             appInjector.resolve('NaveConcreteRepository')
         );
 
-
         objLogService.limparLog();
 
-        objProjetilService.novoProjetil(objNaveService.getEntity());
-        objProjetilService.novoProjetil(objNaveService.getEntity());
+        objProjetilService.novoProjetil(
+            objNaveService.getEntity(), 1, 1
+        );
+
+        objProjetilService.novoProjetil(
+            objNaveService.getEntity(), 1, 1
+        );
+
         objProjetilService.moverProjeteis();
 
         let arrMensagens = objLogService.getMensagens();

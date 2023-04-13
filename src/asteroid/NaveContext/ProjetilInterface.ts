@@ -3,10 +3,14 @@ import { ProjetilEntity } from "./ProjetilEntity";
 
 export interface ProjetilInterface {
     // um novo tiro ou disparo
-    novoProjetil(objNaveEntity : NaveEntity) : void;
+    novoProjetil(
+        objNaveEntity : NaveEntity,
+        velocidade : number,
+        limite  : number
+    ) : void;
 
     // mover todos os projeteis disparados
     moverProjeteis() : void;
 
-    verificarLimite() : boolean;
+    verificarLimite(limite_final : number) : boolean
 }

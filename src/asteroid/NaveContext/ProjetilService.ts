@@ -14,9 +14,15 @@ export class ProjetilService implements ProjetilInterface {
     }
 
     // um novo tiro ou disparo
-    novoProjetil(objNaveEntity : NaveEntity) : void {
+    novoProjetil(
+        objNaveEntity : NaveEntity,
+        velocidade : number,
+        limite  : number
+    ) : void {
         this.objProjetilRepositoy.novoProjetil(
-            objNaveEntity
+            objNaveEntity,
+            velocidade,
+            limite
         );
     }
 
@@ -25,8 +31,8 @@ export class ProjetilService implements ProjetilInterface {
         this.objProjetilRepositoy.moverProjeteis();
     }
 
-    verificarLimite() : boolean {
-        return true;
+    verificarLimite(limite_final : number) : boolean {
+        return this.objProjetilRepositoy.verificarLimite(limite_final);
     }
 
 }
