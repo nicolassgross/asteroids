@@ -1,7 +1,9 @@
 # arquivos
 package-lock.json
+/npm-debug.log
 
 # pastas
 node_modules/
 build/
 .vscode/
+dist/

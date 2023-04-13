@@ -9,7 +9,7 @@ export default class Demo extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('logo', 'phaser3-logo.png');
+        this.load.image('logo', './src/exemplos/phaser3-logo.png');
         // this.load.image('libs', 'assets/libs.png');
         // this.load.glsl('bundle', 'assets/plasma-bundle.glsl.js');
         // this.load.glsl('stars', 'assets/starfields.glsl.js');
@@ -31,7 +31,7 @@ export default class Demo extends Phaser.Scene
             duration: 1500,
             ease: 'Sine.inOut',
             yoyo: true,
-            repeat: -1
+            repeat: 3
         })
     }
 }
