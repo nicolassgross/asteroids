@@ -1,7 +1,7 @@
 import { NaveEntity } from "./NaveEntity";
 
 export interface NaveInterface {
-    getNaveEntity() : NaveEntity;
+    getEntity() : NaveEntity;
     acelerar() : void;
     girarParaEsquerda() : void;
     girarParaDireita() : void;

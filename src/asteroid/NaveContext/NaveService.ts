@@ -11,8 +11,8 @@ export class NaveService implements NaveInterface {
         this.objNaveRepositoy = iNaveInterface
     }
 
-    getNaveEntity() : NaveEntity {
-        return this.objNaveRepositoy.getNaveEntity();
+    getEntity() : NaveEntity {
+        return this.objNaveRepositoy.getEntity();
     }
 
     acelerar() : void {

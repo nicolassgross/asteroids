@@ -47,7 +47,7 @@ describe('Teste do contexto da Nave', () => {
             ]
         );
 
-        const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveService.getNaveEntity();
+        const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveService.getEntity();
         expect(velocidade).to.be.equal(1);
         expect(posicao_x).to.be.equal(0);
         expect(posicao_y).to.be.equal(0);
@@ -63,10 +63,15 @@ describe('Teste do contexto da Nave', () => {
             appInjector.resolve('ProjetilConcreteRepository')
         );
 
+        let objNaveService = new NaveService(
+            appInjector.resolve('NaveConcreteRepository')
+        );
+
+
         objLogService.limparLog();
 
-        objProjetilService.novoProjetil();
-        objProjetilService.novoProjetil();
+        objProjetilService.novoProjetil(objNaveService.getEntity());
+        objProjetilService.novoProjetil(objNaveService.getEntity());
         objProjetilService.moverProjeteis();
 
         let arrMensagens = objLogService.getMensagens();
@@ -79,11 +84,5 @@ describe('Teste do contexto da Nave', () => {
                 , 'Todos os projéteis movidos para frente'
             ]
         );
-
-        // const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveService.getNaveEntity();
-        // expect(velocidade).to.be.equal(1);
-        // expect(posicao_x).to.be.equal(0);
-        // expect(posicao_y).to.be.equal(0);
-        // expect(direcao_em_graus).to.be.equal(0);
     });
 });

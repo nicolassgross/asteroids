@@ -17,7 +17,7 @@ export class NaveConsoleRepository implements NaveInterface {
         this.objNaveEntity = new NaveFactory().criarNave();
     }
 
-    getNaveEntity() : NaveEntity {
+    getEntity() : NaveEntity {
         return this.objNaveEntity;
     }
 
