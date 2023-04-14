@@ -211,6 +211,8 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
     - npm i webpack-merge --save-dev
     - npm i url-loader --save-dev
 
+- após a instalacao do phaser, será necessário rodar com npm start
+
 
 ## problemas encontrados durante o desenvolvimento
 

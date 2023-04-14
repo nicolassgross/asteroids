@@ -1,5 +1,7 @@
 import * as Phaser from 'phaser';
 
+// imprimindo uma imagem na tela que foi dado o load dela
+
 export default class Demo extends Phaser.Scene
 {
     constructor ()

@@ -1,5 +1,7 @@
 import * as Phaser from 'phaser';
 
+// imprimindo um triangulo na tela que pode ser movido para a esquerda e para a direita
+
 export default class Demo extends Phaser.Scene
 {
 
