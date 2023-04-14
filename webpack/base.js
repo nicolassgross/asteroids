@@ -19,13 +19,23 @@ module.exports = {
         test: [/\.vert$/, /\.frag$/],
         use: "raw-loader"
       },
+
       {
-        test: /\.(gif|png|jpe?g|svg|xml)$/i,
-        use: "file-loader"
+        test: /\.ts$/,
+        loader: 'ts-loader'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '/src/exemplos/[name].[ext]'
+        }
       }
     ]
   },
+
   entry: '/src/exemplos/test-phaser.ts',
+
   plugins: [
     new CleanWebpackPlugin({
       root: path.resolve(__dirname, "./")
@@ -37,5 +47,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/exemplos/index.html"
     })
-  ]
+  ],
+
+  resolve: {
+    extensions: ['.ts', '.js']
+  }
 };

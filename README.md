@@ -195,3 +195,27 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 
 - test-framework
     - npm test
+
+- phaser - necessários
+    - npm i ts-loader --save-dev
+    - npm i babel --save-dev
+    - npm i babel-loader --save-dev
+    - npm i webpack --save-dev
+    - npm i webpack-dev-server --save-dev
+    - npm i webpack-cli --save-dev
+    - npm i clean-webpack-plugin --save-dev
+    - npm i file-loader --save-dev
+    - npm i html-webpack-plugin --save-dev
+    - npm i raw-loader  --save-dev
+    - npm i terser-webpack-plugin --save-dev
+    - npm i webpack-merge --save-dev
+    - npm i url-loader --save-dev
+
+
+## problemas encontrados durante o desenvolvimento
+
+- ao incluir a unit de test, senti a necessidade de incluir um sistema de DI. Tive dificuldade em entender como resolver um problema em relação a biblioteca "typed-inject" em relação a injeção automática de objetos. O problema só foi resolvido ao descobrir que as classes injetáveis tinham que ter a definição "public static inject"
+
+- na instalação do phaser, parece que ele não se comporta nada bem com o typescript
+    - mudou a relação de build do typescript de tsc para webpack
+    - o webpack parece nao entender corretamete o typescript
