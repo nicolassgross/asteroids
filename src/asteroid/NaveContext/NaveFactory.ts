@@ -4,10 +4,10 @@ export class NaveFactory {
     criarNave() : NaveEntity {
         return new NaveEntity(
             10,
-            10,
-            10,
-            10,
-            10,
+            200,
+            50,
+            20,
+            20,
             0
         );
 

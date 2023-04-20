@@ -23,17 +23,25 @@ export class NaveConsoleRepository implements NaveInterface {
 
     acelerar() : void {
         this.objLogService.logarTexto('Nave acelerando');
-        this.objNaveEntity.velocidade += 1;
+        this.objNaveEntity.velocidade += 0.03;
+    }
+
+    desacelerar() : void {
+        this.objLogService.logarTexto('Nave desacelerando');
+        console.log(this.objNaveEntity.velocidade);
+        if (this.objNaveEntity.velocidade >= 0) {
+            this.objNaveEntity.velocidade -= 0.01;
+        }
     }
 
     girarParaEsquerda(): void {
         this.objLogService.logarTexto('Nave girando para a esquerda');
-        this.objNaveEntity.direcao_em_graus -= 1;
+        this.objNaveEntity.direcao_em_graus -= 0.03;
     }
 
     girarParaDireita(): void {
         this.objLogService.logarTexto('Nave girando para a direita');
-        this.objNaveEntity.direcao_em_graus += 1;
+        this.objNaveEntity.direcao_em_graus += 0.03;
     }
 
     atirar(): void {

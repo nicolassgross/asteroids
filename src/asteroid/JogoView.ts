@@ -18,14 +18,16 @@ export class JogoView
 
     criarNave()
     {
+        // console.log("criacao : " + this.naveModel.posicao_x);
         return this.objScene.add.triangle(
+            // 200, 200, 0, 50, 50, 50, 25,
             this.naveModel.posicao_x,
             this.naveModel.posicao_y,
             0,
             this.naveModel.tamanho_x,
             this.naveModel.tamanho_x,
-            this.naveModel.tamanho_y,
-            this.naveModel.tamanho_y / 2,
+            this.naveModel.tamanho_x,
+            this.naveModel.tamanho_x / 2,
             0,
             0x6666ff
         );
@@ -33,9 +35,12 @@ export class JogoView
 
     atualizarPosicaoNave()
     {
+        this.objScene.objGameObjectNave.setRotation(
+            this.naveModel.direcao_em_graus
+        );
 
-        this.objScene.objNaveView.x = this.naveModel.direcao_em_graus;
-        // this.objScene.objNaveView.y = this.objScene.objNaveView.y + y;
+        this.objScene.objGameObjectNave.x -= Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+        this.objScene.objGameObjectNave.y -= Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
     }
 
 }

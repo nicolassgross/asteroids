@@ -19,6 +19,10 @@ export class NaveService implements NaveInterface {
         this.objNaveRepositoy.acelerar();
     }
 
+    desacelerar() : void {
+        this.objNaveRepositoy.desacelerar();
+    }
+
     girarParaEsquerda(): void {
         this.objNaveRepositoy.girarParaEsquerda();
     }

@@ -30,7 +30,7 @@ export default class JogoController extends Phaser.Scene
     // triangle: any;
 
     // todo - alterar esse nome do objeto para nao confundir
-    objNaveView: any;
+    objGameObjectNave: any;
     // triangle_copy : any;
 
     constructor ()
@@ -73,7 +73,7 @@ export default class JogoController extends Phaser.Scene
 
         // this.x = this.y = 10;
 
-        this.objNaveView = this.objJogoView.criarNave();
+        this.objGameObjectNave = this.objJogoView.criarNave();
         // this.triangle_copy = this.objJogoView.criarNave();
 
     }
@@ -88,6 +88,10 @@ export default class JogoController extends Phaser.Scene
 
         this.objKeyBidding = this.input.keyboard?.createCursorKeys();
 
+        if (this.objKeyBidding.up.isDown) {
+            this.objNaveService.acelerar();
+        }
+
         if (this.objKeyBidding.right.isDown) {
             this.objNaveService.girarParaDireita();
         }
@@ -95,6 +99,9 @@ export default class JogoController extends Phaser.Scene
         if (this.objKeyBidding.left.isDown) {
             this.objNaveService.girarParaEsquerda();
         }
+
+        // sempre desacelera a nave
+        this.objNaveService.desacelerar();
 
         // atualiza posicao da nave
         this.objJogoView.atualizarPosicaoNave();
