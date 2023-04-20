@@ -28,13 +28,13 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'file-loader',
         options: {
-          name: '/src/exemplos/[name].[ext]'
+          name: '/src/asteroid/[name].[ext]'
         }
       }
     ]
   },
 
-  entry: '/src/exemplos/test-phaser.ts',
+  entry: '/src/asteroid/JogoController.ts',
 
   plugins: [
     new CleanWebpackPlugin({
@@ -45,7 +45,7 @@ module.exports = {
       WEBGL_RENDERER: JSON.stringify(true)
     }),
     new HtmlWebpackPlugin({
-      template: "./src/exemplos/index.html"
+      template: "./src/main.html"
     })
   ],
 

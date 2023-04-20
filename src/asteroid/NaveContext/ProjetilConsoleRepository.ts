@@ -33,6 +33,8 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
                 velocidade,
                 objNaveEntity.posicao_x,
                 objNaveEntity.posicao_y,
+                10, // tamanho_x =
+                10, // tamanho_y =
                 objNaveEntity.direcao_em_graus,
                 limite
             )
