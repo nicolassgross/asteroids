@@ -23,12 +23,13 @@ export class NaveConsoleRepository implements NaveInterface {
 
     acelerar() : void {
         this.objLogService.logarTexto('Nave acelerando');
+
         this.objNaveEntity.velocidade += 0.03;
     }
 
     desacelerar() : void {
         this.objLogService.logarTexto('Nave desacelerando');
-        console.log(this.objNaveEntity.velocidade);
+
         if (this.objNaveEntity.velocidade >= 0) {
             this.objNaveEntity.velocidade -= 0.01;
         }

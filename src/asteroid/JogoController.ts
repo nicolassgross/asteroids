@@ -74,6 +74,7 @@ export default class JogoController extends Phaser.Scene
         // this.x = this.y = 10;
 
         this.objGameObjectNave = this.objJogoView.criarNave();
+
         // this.triangle_copy = this.objJogoView.criarNave();
 
     }

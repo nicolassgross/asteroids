@@ -3,12 +3,12 @@ import { NaveEntity } from "./NaveEntity";
 export class NaveFactory {
     criarNave() : NaveEntity {
         return new NaveEntity(
-            10,
+            0.01,
             200,
-            50,
+            200,
             20,
             20,
-            0
+            4.65
         );
 
         // velocidade:number,

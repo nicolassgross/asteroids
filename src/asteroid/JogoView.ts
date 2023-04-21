@@ -23,12 +23,14 @@ export class JogoView
             // 200, 200, 0, 50, 50, 50, 25,
             this.naveModel.posicao_x,
             this.naveModel.posicao_y,
-            0,
-            this.naveModel.tamanho_x,
-            this.naveModel.tamanho_x,
-            this.naveModel.tamanho_x,
-            this.naveModel.tamanho_x / 2,
-            0,
+            0, // esquerda baixo
+            this.naveModel.tamanho_y, // esquerda baixo
+
+            this.naveModel.tamanho_x + 10,
+            this.naveModel.tamanho_y / 2, // direita baixo
+
+            0, // cima,
+            0, // cima
             0x6666ff
         );
     }
@@ -39,8 +41,8 @@ export class JogoView
             this.naveModel.direcao_em_graus
         );
 
-        this.objScene.objGameObjectNave.x -= Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
-        this.objScene.objGameObjectNave.y -= Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+        this.objScene.objGameObjectNave.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+        this.objScene.objGameObjectNave.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
     }
 
 }
