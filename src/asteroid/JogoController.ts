@@ -93,6 +93,12 @@ export default class JogoController extends Phaser.Scene
             this.objNaveService.acelerar();
         }
 
+        if (this.objKeyBidding.down.isDown) {
+            this.objNaveService.desacelerar();
+            this.objNaveService.desacelerar();
+            this.objNaveService.desacelerar();
+        }
+
         if (this.objKeyBidding.right.isDown) {
             this.objNaveService.girarParaDireita();
         }

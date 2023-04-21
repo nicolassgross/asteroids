@@ -37,12 +37,12 @@ export class NaveConsoleRepository implements NaveInterface {
 
     girarParaEsquerda(): void {
         this.objLogService.logarTexto('Nave girando para a esquerda');
-        this.objNaveEntity.direcao_em_graus -= 0.03;
+        this.objNaveEntity.direcao_em_graus -= 0.05;
     }
 
     girarParaDireita(): void {
         this.objLogService.logarTexto('Nave girando para a direita');
-        this.objNaveEntity.direcao_em_graus += 0.03;
+        this.objNaveEntity.direcao_em_graus += 0.05;
     }
 
     atirar(): void {
