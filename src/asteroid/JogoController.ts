@@ -114,7 +114,10 @@ export default class JogoController extends Phaser.Scene
         );
 
         // atualiza posicao da nave
-        this.objJogoView.atualizarPosicaoNave();
+        this.objJogoView.atualizarPosicaoNave(
+            this.sys.game.canvas.width,
+            this.sys.game.canvas.height
+        );
     }
 }
 

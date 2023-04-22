@@ -35,8 +35,10 @@ export class JogoView
         );
     }
 
-    atualizarPosicaoNave()
-    {
+    atualizarPosicaoNave(
+        tamanho_mapa_x : number,
+        tamanho_mapa_y : number
+    ) {
         this.objScene.objGameObjectNave.x = this.naveModel.posicao_x;
         this.objScene.objGameObjectNave.y = this.naveModel.posicao_y;
 
@@ -52,11 +54,39 @@ export class JogoView
         this.objScene.objGameObjectNave.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
         this.objScene.objGameObjectNave.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
 
+        this.objScene.objGameObjectNaveCopy.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+        this.objScene.objGameObjectNaveCopy.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+
         // atualiza o model
         this.naveModel.posicao_x = this.objScene.objGameObjectNave.x;
         this.naveModel.posicao_y = this.objScene.objGameObjectNave.y;
 
-        this.objScene.objGameObjectNaveCopy.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
-        this.objScene.objGameObjectNaveCopy.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+
+        // objeto de copia
+        const tamanho_nave = this.naveModel.tamanho_x;
+
+        // saida a direita
+        if (this.objScene.objGameObjectNave.x >= tamanho_mapa_x - tamanho_nave) {
+            this.objScene.objGameObjectNaveCopy.x = this.objScene.objGameObjectNave.x - tamanho_mapa_x;
+        }
+
+        // saida a esquerda
+        if (this.objScene.objGameObjectNave.x <= (0 + tamanho_nave)) {
+            this.objScene.objGameObjectNaveCopy.x = this.objScene.objGameObjectNave.x + tamanho_mapa_x;
+        }
+
+        // saida a baixo
+        if (this.objScene.objGameObjectNave.y >= tamanho_mapa_y - tamanho_nave) {
+            this.objScene.objGameObjectNaveCopy.y = this.objScene.objGameObjectNave.y - tamanho_mapa_y;
+        }
+
+        // saida a acima
+        if (this.objScene.objGameObjectNave.y <= (0 + tamanho_nave)) {
+            this.objScene.objGameObjectNaveCopy.y = this.objScene.objGameObjectNave.y + tamanho_mapa_y;
+        }
+
+
+
+
     }
 }
