@@ -38,4 +38,14 @@ export class NaveService implements NaveInterface {
     explodirNave(): void {
         this.objNaveRepositoy.explodirNave();
     }
+
+    verificarSaidaCenario(
+        tamanho_mapa_x : number,
+        tamanho_mapa_y : number
+    ): void {
+        this.objNaveRepositoy.verificarSaidaCenario(
+            tamanho_mapa_x,
+            tamanho_mapa_y
+        );
+    }
 }

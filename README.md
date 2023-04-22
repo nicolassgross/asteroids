@@ -165,7 +165,8 @@ Ao passar do limite da tela com a nave, ela aparece no lado oposto de onde atrav
 - Done - Criar fabrica para injeção de dependencias de testes
 - Done - Injetar o log
 - Done - Programar as regras de negócios iniciais para poc
-- poc com phaser
+- Done - poc com phaser
+- programacao da regra do cenario
 
 ## Definições
 

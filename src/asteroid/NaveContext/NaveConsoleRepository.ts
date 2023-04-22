@@ -30,6 +30,7 @@ export class NaveConsoleRepository implements NaveInterface {
     desacelerar() : void {
         this.objLogService.logarTexto('Nave desacelerando');
 
+        // cuidado para nao andar para traz
         if (this.objNaveEntity.velocidade >= 0) {
             this.objNaveEntity.velocidade -= 0.01;
         }
@@ -51,5 +52,32 @@ export class NaveConsoleRepository implements NaveInterface {
 
     explodirNave(): void {
         this.objLogService.logarTexto('Nave explodiu');
+    }
+
+    verificarSaidaCenario(
+        tamanho_mapa_x : number,
+        tamanho_mapa_y : number
+    ): void {
+        const tamanho_nave = this.objNaveEntity.tamanho_x;
+
+        // se sair pela direita
+        if (this.objNaveEntity.posicao_x >= (tamanho_mapa_x + tamanho_nave)) {
+            this.objNaveEntity.posicao_x = tamanho_nave;
+        }
+
+        // se sair por baixo
+        if (this.objNaveEntity.posicao_y >= (tamanho_mapa_y + tamanho_nave)) {
+            this.objNaveEntity.posicao_y = tamanho_nave;
+        }
+
+        // se sair pela esquerda
+        if (this.objNaveEntity.posicao_x <= (0 - tamanho_nave)) {
+            this.objNaveEntity.posicao_x = tamanho_mapa_x - tamanho_nave;
+        }
+
+        // se sair por cima
+        if (this.objNaveEntity.posicao_y <= (0 - tamanho_nave)) {
+            this.objNaveEntity.posicao_y = tamanho_mapa_y - tamanho_nave;
+        }
     }
 }

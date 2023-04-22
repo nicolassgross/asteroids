@@ -8,4 +8,9 @@ export interface NaveInterface {
     girarParaDireita() : void;
     atirar() : void;
     explodirNave() : void;
+
+    verificarSaidaCenario(
+        tamanho_mapa_x : number,
+        tamanho_mapa_y : number
+    ): void;
 }

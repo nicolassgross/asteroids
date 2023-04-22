@@ -1,7 +1,5 @@
 import * as Phaser from 'phaser';
 
-
-
 import { createInjector, Injector } from 'typed-inject';
 
 import { JogoConsoleRepository } from "./JogoContext/JogoConsoleRepository";
@@ -14,38 +12,47 @@ import { NaveService } from './NaveContext/NaveService';
 // camada de visao
 import { JogoView } from "./JogoView";
 
+const TAMANHO_MAPA_X = 800;
+const TAMANHO_MAPA_Y = 600;
+
 
 export default class JogoController extends Phaser.Scene
 {
+    // inicio logica de negocio
+
     // injetor de DI
     appInjector : Injector<any>;
 
-    objJogoView : JogoView;
+    // servico nave
     objNaveService : NaveService;
 
 
-    // x : number;
-    // y : number;
-    objKeyBidding : any;
-    // triangle: any;
 
-    // todo - alterar esse nome do objeto para nao confundir
+    // inicio logica phaser
+
+    // responsavel pela visao - renderizacao dos objetos
+    objJogoView : JogoView;
+
+    // objeto teclado
+    objKeyBidding : any;
+
+    // representa a nave a ser renderizada
     objGameObjectNave: any;
-    // triangle_copy : any;
+
+    // temos uma copia da nave qndo ela passa pela tela
+    objGameObjectNaveCopy: any;
 
     constructor ()
     {
         super('JogoController');
         this.appInjector = this.criarAppInjector();
 
+        // recupera o repositorio da nave para injetar no serviço
         const objNaveConcreteRepository = this.appInjector.resolve('NaveConcreteRepository');
 
         this.objNaveService = new NaveService(objNaveConcreteRepository);
 
-        // const appInjector = objAsteroidTestFactory.criarAppInjector();
-        // const objLogService = appInjector.resolve('LogInterface');
-        // this.x = this.y = 10;
-
+        // cria o objeto de renderizacao
         this.objJogoView = new JogoView(
             this,
             this.objNaveService.getEntity()
@@ -70,23 +77,12 @@ export default class JogoController extends Phaser.Scene
 
     create ()
     {
-
-        // this.x = this.y = 10;
-
         this.objGameObjectNave = this.objJogoView.criarNave();
-
-        // this.triangle_copy = this.objJogoView.criarNave();
-
+        this.objGameObjectNaveCopy = this.objJogoView.criarNave();
     }
 
     update ()
     {
-        // let triangle = this.add.triangle(200, 200, 0, 148, 148, 148, 74, 0, 0x6666ff);
-
-        // this.graphic
-        //     .clear()
-        //     .strokeCircle(this.x, 10, 10);
-
         this.objKeyBidding = this.input.keyboard?.createCursorKeys();
 
         if (this.objKeyBidding.up.isDown) {
@@ -110,35 +106,23 @@ export default class JogoController extends Phaser.Scene
         // sempre desacelera a nave
         this.objNaveService.desacelerar();
 
+        console.log(this.sys.game.canvas.width);
+
+        this.objNaveService.verificarSaidaCenario(
+            this.sys.game.canvas.width,
+            this.sys.game.canvas.height
+        );
+
         // atualiza posicao da nave
         this.objJogoView.atualizarPosicaoNave();
-
-        // if (this.triangle.x >= 800) {
-        //     this.triangle_copy.x = this.triangle.x - 800;
-        // }
-
-        // if (this.triangle.x >= (800 + 200)) {
-        //     this.triangle.x = 200;
-        // }
-
-        // if (this.triangle.x <= 0) {
-        //     this.triangle_copy.x = this.triangle.x + 800;
-        // }
-
-        // if (this.triangle.x <= (0 - 200) ) {
-        //     this.triangle_copy.x = this.triangle.x + 800;
-        //     this.triangle.x = 800 - 200;
-        // }
-
-
     }
 }
 
 const config = {
     type: Phaser.AUTO,
     backgroundColor: '#000000',
-    width: 800,
-    height: 600,
+    width: TAMANHO_MAPA_X,
+    height: TAMANHO_MAPA_Y,
     scene: JogoController
 };
 

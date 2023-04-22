@@ -37,12 +37,26 @@ export class JogoView
 
     atualizarPosicaoNave()
     {
+        this.objScene.objGameObjectNave.x = this.naveModel.posicao_x;
+        this.objScene.objGameObjectNave.y = this.naveModel.posicao_y;
+
+        // movimentação e rotação
         this.objScene.objGameObjectNave.setRotation(
+            this.naveModel.direcao_em_graus
+        );
+
+        this.objScene.objGameObjectNaveCopy.setRotation(
             this.naveModel.direcao_em_graus
         );
 
         this.objScene.objGameObjectNave.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
         this.objScene.objGameObjectNave.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
-    }
 
+        // atualiza o model
+        this.naveModel.posicao_x = this.objScene.objGameObjectNave.x;
+        this.naveModel.posicao_y = this.objScene.objGameObjectNave.y;
+
+        this.objScene.objGameObjectNaveCopy.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+        this.objScene.objGameObjectNaveCopy.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+    }
 }
