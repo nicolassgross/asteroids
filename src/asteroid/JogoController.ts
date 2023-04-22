@@ -6,11 +6,14 @@ import { JogoConsoleRepository } from "./JogoContext/JogoConsoleRepository";
 import { NaveConsoleRepository } from "./NaveContext/NaveConsoleRepository";
 import { ProjetilConsoleRepository } from './NaveContext/ProjetilConsoleRepository';
 
+
 import { LogService } from './SharedContext/LogService';
 import { NaveService } from './NaveContext/NaveService';
+import { ProjetilService } from './NaveContext/ProjetilService';
 
 // camada de visao
 import { JogoView } from "./JogoView";
+
 
 const TAMANHO_MAPA_X = 800;
 const TAMANHO_MAPA_Y = 600;
@@ -26,6 +29,7 @@ export default class JogoController extends Phaser.Scene
     // servico nave
     objNaveService : NaveService;
 
+    objProjetilService : ProjetilService;
 
 
     // inicio logica phaser
@@ -49,8 +53,10 @@ export default class JogoController extends Phaser.Scene
 
         // recupera o repositorio da nave para injetar no serviço
         const objNaveConcreteRepository = this.appInjector.resolve('NaveConcreteRepository');
+        const objProjetilConcreteRepository = this.appInjector.resolve('ProjetilConcreteRepository');
 
         this.objNaveService = new NaveService(objNaveConcreteRepository);
+        this.objProjetilService = new ProjetilService(objProjetilConcreteRepository);
 
         // cria o objeto de renderizacao
         this.objJogoView = new JogoView(
@@ -64,8 +70,9 @@ export default class JogoController extends Phaser.Scene
         const appInjector = createInjector()
             .provideClass('LogInterface', LogService)
             .provideClass('JogoConcreteRepository', JogoConsoleRepository)
-            .provideClass('NaveConcreteRepository', NaveConsoleRepository)
-            .provideClass('ProjetilConcreteRepository', ProjetilConsoleRepository);
+            .provideClass('ProjetilConcreteRepository', ProjetilConsoleRepository)
+            .provideClass('NaveConcreteRepository', NaveConsoleRepository);
+
 
         return appInjector;
     }
@@ -103,6 +110,15 @@ export default class JogoController extends Phaser.Scene
             this.objNaveService.girarParaEsquerda();
         }
 
+        if (this.objKeyBidding.space.isDown) {
+            this.objNaveService.atirar();
+
+            this.objProjetilService.novoProjetil(
+                this.objNaveService.getEntity(),
+                1, 100
+            );
+        }
+
         // sempre desacelera a nave
         this.objNaveService.desacelerar();
 
@@ -118,6 +134,9 @@ export default class JogoController extends Phaser.Scene
             this.sys.game.canvas.width,
             this.sys.game.canvas.height
         );
+
+        this.objProjetilService.moverProjeteis();
+        this.objProjetilService.verificarLimite(100);
     }
 }
 

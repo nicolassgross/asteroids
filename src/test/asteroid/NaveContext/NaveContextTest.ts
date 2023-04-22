@@ -48,10 +48,10 @@ describe('Teste do contexto da Nave', () => {
         );
 
         const { velocidade, posicao_x, posicao_y, direcao_em_graus } = objNaveService.getEntity();
-        expect(velocidade).to.be.equal(1);
-        expect(posicao_x).to.be.equal(0);
-        expect(posicao_y).to.be.equal(0);
-        expect(direcao_em_graus).to.be.equal(0);
+        expect(velocidade).to.be.equal(0.04);
+        expect(posicao_x).to.be.equal(200);
+        expect(posicao_y).to.be.equal(200);
+        expect(direcao_em_graus).to.be.equal(4.65);
     });
 
     it('Teste do Serviço do Projetil', () => {
@@ -89,5 +89,16 @@ describe('Teste do contexto da Nave', () => {
                 , 'Todos os projéteis movidos para frente'
             ]
         );
+
+        expect(objProjetilService.getArrProjeteis().length).to.be.eq(2);
+
+        objProjetilService.moverProjeteis();
+        expect(objProjetilService.getArrProjeteis().length).to.be.eq(2);
+
+        objProjetilService.moverProjeteis();
+
+        // apos mover 2 vezes o projetil deve ser destruido
+        objProjetilService.verificarLimite(2);
+        expect(objProjetilService.getArrProjeteis().length).to.be.eq(0);
     });
 });

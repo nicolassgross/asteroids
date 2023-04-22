@@ -11,8 +11,9 @@ export class AsteroidTestFactory {
         const appInjector = createInjector()
             .provideClass('LogInterface', LogService)
             .provideClass('JogoConcreteRepository', JogoConsoleRepository)
-            .provideClass('NaveConcreteRepository', NaveConsoleRepository)
-            .provideClass('ProjetilConcreteRepository', ProjetilConsoleRepository);
+            .provideClass('ProjetilConcreteRepository', ProjetilConsoleRepository)
+            .provideClass('NaveConcreteRepository', NaveConsoleRepository);
+
 
         return appInjector;
     }

@@ -2,16 +2,23 @@ import { NaveInterface } from "./NaveInterface";
 import { LogInterface } from "../SharedContext/LogInterface";
 import { NaveEntity } from "./NaveEntity";
 import { NaveFactory } from "./NaveFactory";
+import { ProjetilService } from "./ProjetilService";
+import { ProjetilInterface } from "./ProjetilInterface";
 
 export class NaveConsoleRepository implements NaveInterface {
     private objLogService : LogInterface;
     private objNaveEntity : NaveEntity;
+    private objProjetilService : ProjetilService;
 
     // este inject é necessário para que o DI saiba qual interface concreta será construida
-    public static inject = ['LogInterface'] as const;
+    public static inject = ['LogInterface', 'ProjetilConcreteRepository'] as const;
 
-    constructor(iLogInterface : LogInterface) {
+    constructor(
+        iLogInterface : LogInterface,
+        objProjetilConcreteRepository : ProjetilInterface
+    ) {
         this.objLogService = iLogInterface;
+        this.objProjetilService = new ProjetilService(objProjetilConcreteRepository)
 
         // avaliar este new aqui
         this.objNaveEntity = new NaveFactory().criarNave();
@@ -48,6 +55,12 @@ export class NaveConsoleRepository implements NaveInterface {
 
     atirar(): void {
         this.objLogService.logarTexto('Nave atirando');
+
+        // this.objProjetilService.novoProjetil(
+        //     this.getEntity(),
+        //     1,
+        //     10
+        // );
     }
 
     explodirNave(): void {

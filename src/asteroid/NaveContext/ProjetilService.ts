@@ -26,6 +26,10 @@ export class ProjetilService implements ProjetilInterface {
         );
     }
 
+    getArrProjeteis() : Array<ProjetilEntity> {
+        return this.objProjetilRepositoy.getArrProjeteis();
+    }
+
     // mover todos os projeteis disparados
     moverProjeteis() : void {
         this.objProjetilRepositoy.moverProjeteis();

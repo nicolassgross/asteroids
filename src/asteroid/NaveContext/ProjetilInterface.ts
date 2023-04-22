@@ -9,6 +9,9 @@ export interface ProjetilInterface {
         limite  : number
     ) : void;
 
+    // retorna os projeteis
+    getArrProjeteis() : Array<ProjetilEntity>;
+
     // mover todos os projeteis disparados
     moverProjeteis() : void;
 

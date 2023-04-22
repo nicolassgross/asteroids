@@ -41,6 +41,10 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
         )
     }
 
+    getArrProjeteis() : Array<ProjetilEntity> {
+        return this.arrProjeteis;
+    }
+
     // mover todos os projeteis disparados
     moverProjeteis() : void {
         this.objLogService.logarTexto('Todos os projéteis movidos para frente');
@@ -56,9 +60,11 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
 
     // se o limite do projetil chegar no limite final, ele deve ser excluido
     verificarLimite(limite_final : number) : boolean {
-        this.arrProjeteis.filter( (element, index) => {
+        this.arrProjeteis = this.arrProjeteis.filter( (element, index) => {
             return element.limite <= limite_final
         });
+
+        console.log(this.arrProjeteis.length);
 
         return true;
     }
