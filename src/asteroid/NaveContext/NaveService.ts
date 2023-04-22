@@ -5,45 +5,45 @@ import { NaveEntity } from "./NaveEntity";
 
 export class NaveService implements NaveInterface {
 
-    private objNaveRepositoy : NaveInterface;
+    private objNaveRepository : NaveInterface;
 
     constructor(iNaveInterface : NaveInterface) {
-        this.objNaveRepositoy = iNaveInterface
+        this.objNaveRepository = iNaveInterface
     }
 
     getEntity() : NaveEntity {
-        return this.objNaveRepositoy.getEntity();
+        return this.objNaveRepository.getEntity();
     }
 
     acelerar() : void {
-        this.objNaveRepositoy.acelerar();
+        this.objNaveRepository.acelerar();
     }
 
     desacelerar() : void {
-        this.objNaveRepositoy.desacelerar();
+        this.objNaveRepository.desacelerar();
     }
 
     girarParaEsquerda(): void {
-        this.objNaveRepositoy.girarParaEsquerda();
+        this.objNaveRepository.girarParaEsquerda();
     }
 
     girarParaDireita(): void {
-        this.objNaveRepositoy.girarParaDireita();
+        this.objNaveRepository.girarParaDireita();
     }
 
     atirar(): void {
-        this.objNaveRepositoy.atirar();
+        this.objNaveRepository.atirar();
     }
 
     explodirNave(): void {
-        this.objNaveRepositoy.explodirNave();
+        this.objNaveRepository.explodirNave();
     }
 
     verificarSaidaCenario(
         tamanho_mapa_x : number,
         tamanho_mapa_y : number
     ): void {
-        this.objNaveRepositoy.verificarSaidaCenario(
+        this.objNaveRepository.verificarSaidaCenario(
             tamanho_mapa_x,
             tamanho_mapa_y
         );
