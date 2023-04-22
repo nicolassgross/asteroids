@@ -115,14 +115,13 @@ export default class JogoController extends Phaser.Scene
 
             this.objProjetilService.novoProjetil(
                 this.objNaveService.getEntity(),
-                1, 100
+                1, 0
             );
         }
 
         // sempre desacelera a nave
         this.objNaveService.desacelerar();
 
-        console.log(this.sys.game.canvas.width);
 
         this.objNaveService.verificarSaidaCenario(
             this.sys.game.canvas.width,

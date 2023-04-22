@@ -35,7 +35,7 @@ export class NaveConsoleRepository implements NaveInterface {
     }
 
     desacelerar() : void {
-        this.objLogService.logarTexto('Nave desacelerando');
+        // this.objLogService.logarTexto('Nave desacelerando');
 
         // cuidado para nao andar para traz
         if (this.objNaveEntity.velocidade >= 0) {
