@@ -10,8 +10,7 @@ export class JogoView
     constructor (
         objScene : JogoController,
         objNaveEntity : NaveEntity
-    )
-    {
+    ) {
         this.objScene = objScene;
         this.naveModel = objNaveEntity;
     }

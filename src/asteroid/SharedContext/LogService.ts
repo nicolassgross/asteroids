@@ -5,7 +5,7 @@ export class LogService  implements LogInterface {
 
     public logarTexto(str : string) : void {
         this.addMensagem(str);
-        console.log(str);
+        // console.log(str);
     }
 
     public addMensagem(str : string) : void {

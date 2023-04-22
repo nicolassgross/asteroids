@@ -61,11 +61,11 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
     // se o limite do projetil chegar no limite final, ele deve ser excluido
     verificarLimite(limite_final : number) : boolean {
         this.arrProjeteis = this.arrProjeteis.filter( (element, index) => {
-            console.log(element.limite);
+            // console.log(element.limite);
             return element.limite <= limite_final
         });
 
-        console.log(this.arrProjeteis.length);
+        // console.log(this.arrProjeteis.length);
 
         return true;
     }
