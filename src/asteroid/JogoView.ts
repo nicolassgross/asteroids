@@ -8,11 +8,10 @@ export class JogoView
     naveModel : NaveEntity;
 
     constructor (
-        objScene : JogoController,
-        objNaveEntity : NaveEntity
+        objScene : JogoController
     ) {
         this.objScene = objScene;
-        this.naveModel = objNaveEntity;
+        this.naveModel = objScene.objNaveService.getEntity();
     }
 
     criarNave()
@@ -87,5 +86,33 @@ export class JogoView
 
 
 
+    }
+
+    atualizarPosicaoTiros(
+        tamanho_mapa_x : number,
+        tamanho_mapa_y : number
+    ) {
+        const arrProjeteisModel = this.objScene
+            .objProjetilService
+            .getArrProjeteis();
+
+        const objGraphic = this.objScene
+            .objGameObjectProjetilContainer
+            .getChildren();
+
+        // apaga tudo
+        objGraphic[0].destroy();
+        objGraphic[0] = this.objScene.add.graphics();
+
+        arrProjeteisModel.forEach(objProjetilEntity => {
+            objGraphic[0].fillStyle(0x9966ff, 1);
+
+            objGraphic[0].fillCircle(
+                objProjetilEntity.posicao_x,
+                objProjetilEntity.posicao_y,
+                3,
+                0x6666ff
+            );
+        });
     }
 }

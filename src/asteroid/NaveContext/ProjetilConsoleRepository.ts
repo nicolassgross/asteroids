@@ -27,6 +27,12 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
     ) : void {
         this.objLogService.logarTexto('Novo Projetil Criado');
 
+        console.log(objNaveEntity.direcao_em_graus);
+        console.log(objNaveEntity.posicao_x);
+        console.log(objNaveEntity.posicao_y);
+
+
+
         // adiciona novo item no projetil na posicao da nave
         this.arrProjeteis.push(
             new ProjetilEntity(
@@ -49,9 +55,12 @@ export class ProjetilConsoleRepository implements ProjetilInterface {
     moverProjeteis() : void {
         this.objLogService.logarTexto('Todos os projéteis movidos para frente');
 
+        // this.objScene.objGameObjectNave.x += Math.cos(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+        // this.objScene.objGameObjectNave.y += Math.sin(this.naveModel.direcao_em_graus) * this.naveModel.velocidade;
+
         this.arrProjeteis.map( (objProjetilEntity) => {
-            objProjetilEntity.posicao_x += 1;
-            objProjetilEntity.posicao_y += 1;
+            objProjetilEntity.posicao_x += Math.cos(objProjetilEntity.direcao_em_graus) * objProjetilEntity.velocidade;
+            objProjetilEntity.posicao_y += Math.sin(objProjetilEntity.direcao_em_graus) * objProjetilEntity.velocidade;
             objProjetilEntity.limite +=1;
 
             return objProjetilEntity
